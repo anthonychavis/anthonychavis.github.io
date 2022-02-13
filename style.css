@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Chicle&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  /* COLORS */
+  --color-font1: #ffa500;
+  --nav-bg: #240524;
+
+  /* OUTLINE */
+  --border: solid red 1px;
+}
+
+html {
+  box-sizing: border-box;
+  color: var(--nav-bg);
+  font-family: "Chicle", cursive;
+  letter-spacing: 1.5px;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  text-align: center;
+  background: url("resources/images/milad-fakurian-PGdW_bHDbpI-unsplash-medium.jpg")
+    center/cover fixed;
+  overflow: scroll;
+}
+
+nav {
+  background-color: var(--nav-bg);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  /* clip-path: polygon(0 0, 100% 0, 97% 50%, 100% 100%, 0 100%, 3% 50%); */
+  clip-path: ellipse(80% 100% at 50% 0%);
+}
+
+a {
+  text-decoration: none;
+  color: var(--nav-bg);
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav li {
+  padding: 1rem;
+  /* border: var(--border); */
+}
+
+li {
+  list-style-type: none;
+}
+
+nav a {
+  color: var(--color-font1);
+}
+
+main {
+  padding: 4rem 1rem 2rem;
+  /* border: var(--border); */
+}
+
+#project-list {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.project {
+  margin: 1rem 1rem 2rem;
+  padding: 0.75rem;
+  width: clamp(300px, 30vw, 600px);
+  box-shadow: -10px 20px 30px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  /* backdrop-filter: blur(10px); */
+  line-height: 1.5;
+  /* border: var(--border); */
+}
+
+p i {
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  /* border: var(--border); */
+  text-align: center;
+}
