@@ -74,6 +74,7 @@ main {
   display: flex;
   justify-content: center;
   flex-flow: wrap;
+  font-size: 1.125rem;
 }
 
 .project {
@@ -88,6 +89,10 @@ main {
   /* backdrop-filter: blur(10px); */
   line-height: 1.5;
   /* border: var(--border); */
+}
+
+figcaption {
+  font-size: 1.35rem;
 }
 
 p {
