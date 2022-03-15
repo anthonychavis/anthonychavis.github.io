@@ -11,6 +11,7 @@
   --color-font1: #ffa500;
   --nav-bg: #240524;
   --nav-a-hover-clr: #c0c0c0;
+  --main-a-hover-clr: #ffa500;
 
   /* OUTLINE */
   --border: solid red 1px;
@@ -54,10 +55,11 @@ a {
   text-decoration: none;
   color: var(--nav-bg);
   cursor: pointer;
+  transition: color 300ms ease-out 100ms;
 }
 a:hover,
 a:focus {
-  color: var(--color-font1);
+  color: var(--main-a-hover-clr);
 }
 
 nav ul {
@@ -76,6 +78,7 @@ li {
 
 nav a {
   color: var(--color-font1);
+  transition: color 400ms ease-out 100ms;
 }
 nav a:hover,
 nav a:focus {
