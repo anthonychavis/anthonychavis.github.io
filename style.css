@@ -69,6 +69,8 @@ nav ul {
 
 nav li {
   padding: 1rem;
+  color: var(--color-font1);
+  transition: all 500ms ease-out 100ms;
   /* border: var(--border); */
 }
 
@@ -77,12 +79,15 @@ li {
 }
 
 nav a {
-  color: var(--color-font1);
-  transition: color 400ms ease-out 100ms;
+  color: inherit;
 }
+
 nav a:hover,
-nav a:focus {
+nav a:focus,
+nav li:hover,
+nav li:focus {
   color: var(--nav-a-hover-clr);
+  transform: scale(1.5);
 }
 
 main {
