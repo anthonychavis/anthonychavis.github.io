@@ -1,186 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | Anthony Chavis</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Projects | Anthony Chavis</title>
 
-    <link href="style.css" rel="stylesheet" />
-    <link
-      rel="icon"
-      href="resources/images/favicon_AC2.png"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="resources/images/favicon_AC2.png"
-      type="image/x-icon"
-    />
-    <meta name="author" content="Anthony Chavis" />
+        <link href="style.css" rel="stylesheet" />
+        <link
+            rel="icon"
+            href="resources/images/favicon_AC2.png"
+            type="image/x-icon"
+        />
+        <link
+            rel="shortcut icon"
+            href="resources/images/favicon_AC2.png"
+            type="image/x-icon"
+        />
+        <meta name="author" content="Anthony Chavis" />
+        <!-- <meta name="description" content="" />
+        <meta property="og: title" content="" /> -->
+        <meta property="og:url" content="https://anthonychavis.github.io/" />
+        <!-- <meta property="og:image" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="twitter:title" content="" />
+        <meta property="twitter:description" content="" />
+        <meta property="twitter:image" content="" />
+        <meta property="twitter:card" content="summary_large_image" /> -->
 
-    <script
-      defer
-      src="https://kit.fontawesome.com/4c627ebcb0.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+        <script
+            defer
+            src="https://kit.fontawesome.com/4c627ebcb0.js"
+            crossorigin="anonymous"
+        ></script>
 
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html" aria-label="home page"
-              ><i class="fa-solid fa-house"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" aria-label="viewing the projects page"
-              ><i class="fa-solid fa-gear"></i
-            ></a>
-          </li>
-          <li>
-            <a href="about.html" aria-label="about page"
-              ><i class="fa-solid fa-book-open"></i
-            ></a>
-          </li>
-          <li>
-            <a href="Contact.html" aria-label="contact page"
-              ><i class="fa-solid fa-address-book"></i
-            ></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"
+        ></script>
+        <script id="projectHB" type="text/x-handlebars-template">
+            {{#each projects}}
+                <li class='project'>
+                    <a href='{{this.siteLive}}' target='_blank'>
+                        <figure>
+                            <figcaption>{{this.title}}</figcaption>
+                            <img
+                                src='{{this.imgSrc}}'
+                                alt='{{this.imgAlt}}'
+                                title='{{this.title}}'
+                            />
+                        </figure>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href='{{this.siteLive}}' target='_blank'>Launch
+                                {{this.title}}</a>
+                        </li>
+                        <li class='source'>
+                            <a href='{{this.siteCode}}' target='_blank'>Source
+                                Code</a>
+                        </li>
+                    </ul>
+                </li>
+            {{/each}}
+        </script>
+        <script defer src="script.js"></script>
+    </head>
 
-    <main>
-      <!-- <h1>Projects</h1> -->
-      <ul id="project-list">
-        <li class="project">
-          <a href="https://anthonychavis.github.io/chore-door/" target="_blank">
-            <figure>
-              <figcaption>Chore Door</figcaption>
-              <img
-                src="resources/images/choredoor-mobile-landscape-resize.jpg"
-                alt="Chore Door game in mobile landscape view"
-                title="Chore Door"
-              />
-            </figure>
-          </a>
-          <ul>
-            <li>
-              <a
-                href="https://anthonychavis.github.io/chore-door/"
-                target="_blank"
-                >Launch Chore Door</a
-              >
-            </li>
-            <li class="source">
-              <a
-                href="https://github.com/anthonychavis/chore-door"
-                target="_blank"
-                >Source Code</a
-              >
-            </li>
-          </ul>
-        </li>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html" aria-label="home page"
+                            ><i class="fa-solid fa-house"></i
+                        ></a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="viewing the projects page"
+                            ><i class="fa-solid fa-gear"></i
+                        ></a>
+                    </li>
+                    <li>
+                        <a href="about.html" aria-label="about page"
+                            ><i class="fa-solid fa-book-open"></i
+                        ></a>
+                    </li>
+                    <li>
+                        <a href="Contact.html" aria-label="contact page"
+                            ><i class="fa-solid fa-address-book"></i
+                        ></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-        <li class="project">
-          <a href="https://anthonychavis.github.io/pig_game/" target="_blank">
-            <figure>
-              <figcaption>Pig Game</figcaption>
-              <img
-                src="resources/images/pig-game2.png"
-                alt="Pig Game in mobile landscape view"
-                title="Pig Game"
-              />
-            </figure>
-          </a>
-          <ul>
-            <li>
-              <a
-                href="https://anthonychavis.github.io/pig_game/"
-                target="_blank"
-                >Launch Pig Game</a
-              >
-            </li>
+        <main>
+            <ul id="project-list"></ul>
+        </main>
 
-            <li class="source">
-              <a
-                href="https://github.com/anthonychavis/pig_game"
-                target="_blank"
-                >Source Code</a
-              >
-            </li>
-          </ul>
-        </li>
-
-        <li class="project">
-          <a
-            href="https://anthonychavis.github.io/guessmynumber/"
-            target="_blank"
-          >
-            <figure>
-              <figcaption>Guess My Number</figcaption>
-              <img
-                src="resources/images/guessnumber.png"
-                alt="Guess My Number game in mobile landscape view"
-                title="Guess My Number"
-              />
-            </figure>
-          </a>
-          <ul>
-            <li>
-              <a
-                href="https://anthonychavis.github.io/guessmynumber/"
-                target="_blank"
-                >Launch Guess My Number</a
-              >
-            </li>
-            <li class="source">
-              <a
-                href="https://github.com/anthonychavis/guessmynumber"
-                target="_blank"
-                >Source Code</a
-              >
-            </li>
-          </ul>
-        </li>
-
-        <li class="project">
-          <a href="https://anthonychavis.github.io/excursion/" target="_blank">
-            <figure>
-              <figcaption>Excursion</figcaption>
-              <img
-                src="resources/images/campground.jpg"
-                alt="campground with tents in the evening"
-                title="Excursion"
-              />
-            </figure>
-          </a>
-          <ul>
-            <li>
-              <a
-                href="https://anthonychavis.github.io/excursion/"
-                target="_blank"
-                >Launch Excursion</a
-              >
-            </li>
-            <li class="source">
-              <a
-                href="https://github.com/anthonychavis/excursion"
-                target="_blank"
-                >Source Code</a
-              >
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </main>
-
-    <footer>
-      <p>&copy; 2022 Anthony Chavis</p>
-    </footer>
-  </body>
+        <footer>
+            <p>&copy; 2022 Anthony Chavis</p>
+        </footer>
+    </body>
 </html>
