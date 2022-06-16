@@ -51,13 +51,33 @@ const context = {
 // Parent Class
 class Projects {
     constructor(title, imgSrc, imgAlt, siteLive, siteCode) {
-        this.title = title;
-        this.imgSrc = imgSrc;
-        this.imgAlt = imgAlt;
-        this.siteLive = siteLive;
-        this.siteCode = siteCode;
+        this._title = title;
+        this._imgSrc = imgSrc;
+        this._imgAlt = imgAlt;
+        this._siteLive = siteLive;
+        this._siteCode = siteCode;
 
         this.keyValue();
+    }
+
+    get title() {
+        return this._title;
+    }
+
+    get imgSrc() {
+        return this._imgSrc;
+    }
+
+    get imgAlt() {
+        return this._imgAlt;
+    }
+
+    get siteLive() {
+        return this._siteLive;
+    }
+
+    get siteCode() {
+        return this._siteCode;
     }
 
     keyValue() {
