@@ -180,6 +180,92 @@ footer {
     /* border: var(--border); */
 }
 
+/* PG TRANSITION */
+.transition-1 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    background-color: var(--nav-bg);
+    /* so it won't be active by default */
+    opacity: 0;
+    /* blocks interactivity of page while in transition (works on block or inline-block elements */
+    pointer-events: none;
+    /* need to know duration b/c in js we need to set a timer delay so we can guess & work w/ the transitions */
+    transition: 0.4s ease-out;
+}
+
+/* the state when it's active (appears on screen) */
+.transition-1.is-active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* no need to block pointer-events since sliding in/out */
+.transition-2 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    /* have to add width to completely remove from screen */
+    width: 100%;
+    z-index: 11;
+    background-color: var(--nav-bg);
+    transition: 0.4s ease-out;
+}
+
+.transition-2.is-active {
+    left: 0;
+}
+
+.transition-3 {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    /* have to add height to completely remove from screen */
+    height: 100%;
+    z-index: 11;
+    background-color: var(--nav-bg);
+    transition: 0.4s ease-out;
+}
+
+.transition-3.is-active {
+    top: 0;
+}
+
+.transition-4 {
+    position: fixed;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 11;
+    background-color: var(--nav-bg);
+    transition: 0.4s ease-out;
+}
+
+.transition-4.is-active {
+    bottom: 0;
+}
+
+.transition-5 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    width: 100%;
+    z-index: 11;
+    background-color: var(--nav-bg);
+    transition: 0.4s ease-out;
+}
+
+.transition-5.is-active {
+    right: 0;
+}
+
 /* @media screen and (min-width: 1025px) {
 
 } */
