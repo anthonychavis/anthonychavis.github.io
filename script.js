@@ -3,7 +3,7 @@
 // PG TRANSITIONS
 window.addEventListener('load', () => {
     const transitionEl = document.querySelector('.transition');
-    const anchors = document.querySelectorAll('a');
+    const anchors = document.querySelectorAll('nav a');
 
     setTimeout(() => {
         transitionEl.classList.remove('is-active');
