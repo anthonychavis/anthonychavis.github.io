@@ -3,13 +3,14 @@
 // PG TRANSITIONS
 window.addEventListener('load', () => {
     const transitionEl = document.querySelector('.transition');
-    const anchors = document.querySelectorAll('nav a');
+    // const navAnchors = document.querySelectorAll('.pg-transition');
+    const navAnchors = document.querySelectorAll('nav a, .pg-transition');
 
     setTimeout(() => {
         transitionEl.classList.remove('is-active');
     }, 400); // set time same as transition duration in CSS
 
-    anchors.forEach(anchor => {
+    navAnchors.forEach(anchor => {
         anchor.addEventListener('click', e => {
             // prevent going to new page
             e.preventDefault();
