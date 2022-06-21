@@ -35,7 +35,7 @@ html {
 
 body {
     position: relative;
-    min-height: 100vh;
+    min-block-size: 100vh;
     text-align: center;
     background: url('resources/images/milad-fakurian-PGdW_bHDbpI-unsplash-medium.jpg')
         center/cover fixed;
@@ -83,7 +83,6 @@ nav li {
     margin: 1rem;
     color: var(--color-font1);
     transition: all 300ms ease-out 100ms;
-    /* border: var(--border); */
 }
 
 li {
@@ -112,12 +111,34 @@ main a:visited {
     color: var(--main-a-visited-clr);
 }
 
+.orb-shadow {
+    border-radius: 120px;
+    max-inline-size: min-content;
+    max-inline-size: max-content;
+    margin-inline: auto;
+    margin-block: 5vh;
+    box-shadow: inset 0px 0px 5px 2vh rgba(0, 0, 0, 0.2),
+        0px 0px 50px 90vh rgba(0, 0, 0, 0.2);
+    padding-block: clamp(29px, 4vh, 50px);
+    padding-inline: clamp(35px, 10vw, 80px);
+}
+
+.orb-shadow p {
+    padding-block-end: 2vh;
+    padding-inline: 12px;
+    font-size: clamp(18px, 9vw, 45px);
+}
+
 h1 {
-    font-size: var(--h1-font-size);
+    /* font-size: var(--h1-font-size); */
+    font-size: clamp(40px, 20vw, 100px);
+    letter-spacing: 2px;
 }
 
 h2 {
-    font-size: var(--h2-font-size);
+    /* font-size: var(--h2-font-size); */
+    font-size: clamp(30px, 15vw, 75px);
+    letter-spacing: 2px;
 }
 
 /* PROJECT CARDS */
@@ -138,7 +159,6 @@ h2 {
     border-inline-end: 1px solid rgba(255, 255, 255, 0.5);
     background: rgba(255, 255, 255, 0.1);
     line-height: 1.5;
-    /* border: var(--border); */
 }
 
 .source {
@@ -160,7 +180,6 @@ img {
     border-inline-end: 0.5px solid rgba(255, 255, 255, 0.5);
     box-shadow: -5px 10px 15px 2.5px rgba(0, 0, 0, 0.4);
     transition: 700ms linear 100ms;
-    /* border: var(--border); */
 }
 img:hover,
 img:focus {
@@ -174,7 +193,6 @@ footer {
     padding: 1rem;
     text-align: center;
     max-block-size: 74px;
-    /* border: var(--border); */
 }
 
 /* PG TRANSITION */
@@ -204,7 +222,7 @@ footer {
     inset-block: 0;
     inset-inline-start: 100%;
     /* have to add width to completely remove from screen */
-    width: 100%;
+    inline-size: 100%;
     z-index: 11;
     background-color: var(--nav-bg);
     transition: 0.4s ease-out;
