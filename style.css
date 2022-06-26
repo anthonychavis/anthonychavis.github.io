@@ -20,10 +20,12 @@
 
     /* FONT SIZE */
     --h1-font-size: 2.5rem;
-    --h2-font-size: 2rem;
-    --h3-font-size: 1.5rem;
+    /* --h2-font-size: 2rem; */
+    --h2-new-size: clamp(30px, 15vw, 75px);
+    /* --h3-font-size: 1.5rem; */
     --p-font-size: 1.125rem;
     --caption-font-size: 1.35rem;
+    --socials-icon-size: clamp(18px, 9vw, 45px);
 }
 
 html {
@@ -126,7 +128,7 @@ main a:visited {
 .orb-shadow p {
     padding-block-end: 2vh;
     padding-inline: 12px;
-    font-size: clamp(18px, 9vw, 45px);
+    font-size: var(--socials-icon-size);
 }
 
 h1 {
@@ -137,7 +139,7 @@ h1 {
 
 h2 {
     /* font-size: var(--h2-font-size); */
-    font-size: clamp(30px, 15vw, 75px);
+    font-size: var(--h2-new-size);
     letter-spacing: 2px;
 }
 
@@ -195,6 +197,20 @@ footer {
     max-block-size: 74px;
 }
 
+/* CONTACT PG */
+#socials {
+    display: flex;
+    justify-content: center;
+    font-size: var(--socials-icon-size);
+    padding-block: 2rem;
+}
+#socials > li {
+    padding-inline: 1.2rem;
+}
+#socials a {
+    display: flex;
+}
+
 /* PG TRANSITION */
 .transition-1 {
     position: fixed;
@@ -209,7 +225,6 @@ footer {
     /* need to know duration b/c in js we need to set a timer delay so we can guess & work w/ the transitions */
     transition: 0.4s ease-out;
 }
-
 /* the state when it's active (appears on screen) */
 .transition-1.is-active {
     opacity: 1;
@@ -227,7 +242,6 @@ footer {
     background-color: var(--nav-bg);
     transition: 0.4s ease-out;
 }
-
 .transition-2.is-active {
     inset-inline-start: 0;
 }
@@ -242,7 +256,6 @@ footer {
     background-color: var(--nav-bg);
     transition: 0.4s ease-out;
 }
-
 .transition-3.is-active {
     inset-block-start: 0;
 }
@@ -256,7 +269,6 @@ footer {
     background-color: var(--nav-bg);
     transition: 0.4s ease-out;
 }
-
 .transition-4.is-active {
     inset-block-end: 0;
 }
@@ -270,7 +282,6 @@ footer {
     background-color: var(--nav-bg);
     transition: 0.4s ease-out;
 }
-
 .transition-5.is-active {
     inset-inline-end: 0;
 }
