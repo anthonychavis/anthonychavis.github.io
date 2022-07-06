@@ -95,6 +95,13 @@ nav a {
     color: inherit;
 }
 
+.cur-pg,
+[href='#'] {
+    color: var(--nav-a-hover-clr);
+    transform: scale(1.5);
+    cursor: not-allowed;
+}
+
 nav a:hover,
 nav a:focus,
 nav li:hover,
