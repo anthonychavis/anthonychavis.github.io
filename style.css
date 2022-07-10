@@ -239,58 +239,57 @@ footer {
 }
 
 /* no need to block pointer-events since sliding in/out */
+/* improved pg performance via addressing the Cumulative Layout Shifts w/o use of will-change */
 .transition-2 {
     position: fixed;
-    inset-block: 0;
-    inset-inline-start: 100%;
-    /* have to add width to completely remove from screen */
-    inline-size: 100%;
     z-index: 11;
     background-color: var(--nav-bg);
+    block-size: 100%;
+    inline-size: 100%;
+    transform: translateX(100%);
     transition: 0.4s ease-out;
 }
 .transition-2.is-active {
-    inset-inline-start: 0;
+    transform: translateX(0);
 }
 
 .transition-3 {
     position: fixed;
-    inset-block-start: 100%;
-    inset-inline: 0;
-    /* have to add height to completely remove from screen */
     block-size: 100%;
+    inline-size: 100%;
+    transform: translateY(100%);
     z-index: 11;
     background-color: var(--nav-bg);
     transition: 0.4s ease-out;
 }
 .transition-3.is-active {
-    inset-block-start: 0;
+    transform: translateY(0);
 }
 
 .transition-4 {
     position: fixed;
-    inset-block-end: 100%;
-    inset-inline: 0;
     block-size: 100%;
+    inline-size: 100%;
+    transform: translateY(-100%);
     z-index: 11;
     background-color: var(--nav-bg);
     transition: 0.4s ease-out;
 }
 .transition-4.is-active {
-    inset-block-end: 0;
+    transform: translateY(0);
 }
 
 .transition-5 {
     position: fixed;
-    inset-block: 0;
-    inset-inline-end: 100%;
+    block-size: 100%;
     inline-size: 100%;
+    transform: translateX(-100%);
     z-index: 11;
     background-color: var(--nav-bg);
     transition: 0.4s ease-out;
 }
 .transition-5.is-active {
-    inset-inline-end: 0;
+    transform: translateX(0);
 }
 
 /* @media screen and (min-width: 1025px) {
