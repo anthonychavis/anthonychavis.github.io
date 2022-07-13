@@ -3,7 +3,6 @@
 // PG TRANSITIONS
 window.addEventListener('load', () => {
     const transitionEl = document.querySelector('.transition');
-    // const navAnchors = document.querySelectorAll('.pg-transition');
     const navAnchors = document.querySelectorAll('nav a, .pg-transition');
 
     setTimeout(() => {
