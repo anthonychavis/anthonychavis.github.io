@@ -1,13 +1,10 @@
 'use strict';
 
 // PG TRANSITIONS
-window.addEventListener('load', () => {
+// window.addEventListener('load', () => {
+window.addEventListener('pageshow', () => {
     const transitionEl = document.querySelector('.transition');
     const navAnchors = document.querySelectorAll('nav a, .pg-transition');
-
-    setTimeout(() => {
-        transitionEl.classList.remove('is-active');
-    }, 400); // set time same as transition duration in CSS
 
     navAnchors.forEach(anchor => {
         anchor.addEventListener('click', e => {
@@ -29,9 +26,20 @@ window.addEventListener('load', () => {
             }
         });
     });
+
+    setTimeout(() => {
+        transitionEl.classList.remove('is-active');
+    }, 400); // set time same as desired
 });
 // console.log(window);
 // console.log(window.location);
+
+// check for persisted
+window.addEventListener('pageshow', event =>
+    event.persisted
+        ? console.log('restored from bfcache')
+        : console.log('loaded manually')
+);
 
 // HANDLEBARS
 if (window.location.href.endsWith('projects.html')) {
