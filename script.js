@@ -1,10 +1,19 @@
 'use strict';
 
 // PG TRANSITIONS
-// window.addEventListener('load', () => {
-window.addEventListener('pageshow', () => {
+window.addEventListener('load', async () => {
+    // window.addEventListener('pageshow', () => {
+    // corrects for back/forward on desktop browser, but 1) drops page-transition altogether on firefox 2) page "unload" transition dropped on chrome (& at least 2 non-ios, mobile browsers) but page "load" transition maintained.
+    // also the nav elements don't always adjust color as they should. Could use dom traversing to deselect the icon color when another icon is hovered/focussed
+
     const transitionEl = document.querySelector('.transition');
     const navAnchors = document.querySelectorAll('nav a, .pg-transition');
+    // promisify setTimeout - fxn that returns a Promise
+    const timer = ms => {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    };
+
+    await timer(200).then(() => transitionEl.classList.remove('is-active')); // set time same as desired
 
     navAnchors.forEach(anchor => {
         anchor.addEventListener('click', e => {
@@ -20,26 +29,23 @@ window.addEventListener('pageshow', () => {
                 transitionEl.classList.add('is-active');
 
                 // target pg reveal
-                setTimeout(() => {
-                    window.location.href = target;
-                }, 400); // set time same as transition duration in CSS
+                timer(400).then(() => (window.location.href = target)); // set time same as transition duration in CSS
             }
         });
     });
-
-    setTimeout(() => {
-        transitionEl.classList.remove('is-active');
-    }, 400); // set time same as desired
 });
 // console.log(window);
 // console.log(window.location);
 
 // check for persisted
-window.addEventListener('pageshow', event =>
-    event.persisted
-        ? console.log('restored from bfcache')
-        : console.log('loaded manually')
-);
+window.addEventListener('pageshow', event => {
+    if (event.persisted) {
+        console.log('restored from bfcache');
+        window.location.reload();
+    } else {
+        console.log('loaded manually');
+    }
+});
 
 // HANDLEBARS
 if (window.location.href.endsWith('projects.html')) {
