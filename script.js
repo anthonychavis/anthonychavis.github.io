@@ -1,4 +1,9 @@
 'use strict';
+/*
+const bgImg = async () =>
+    (document.body.style.background =
+        "url('resources/images/milad-fakurian-PGdW_bHDbpI-unsplash-medium.jpg')center/cover fixed");
+        */
 
 // PG TRANSITIONS
 window.addEventListener('load', async () => {
@@ -9,9 +14,9 @@ window.addEventListener('load', async () => {
     const transitionEl = document.querySelector('.transition');
     const navAnchors = document.querySelectorAll('nav a, .pg-transition');
     // promisify setTimeout - fxn that returns a Promise
-    const timer = ms => {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    };
+    const timer = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+    // await bgImg();
 
     await timer(200).then(() => transitionEl.classList.remove('is-active')); // set time same as desired
 
@@ -29,7 +34,11 @@ window.addEventListener('load', async () => {
                 transitionEl.classList.add('is-active');
 
                 // target pg reveal
-                timer(400).then(() => (window.location.href = target)); // set time same as transition duration in CSS
+                // timer(400).then(() => (window.location.href = target)); // set time same as transition duration in CSS
+                transitionEl.addEventListener(
+                    'transitionend',
+                    () => (window.location.href = target)
+                );
             }
         });
     });
