@@ -32,7 +32,7 @@ window.addEventListener('load', async () => {
 window.addEventListener('pageshow', event => {
     if (event.persisted) {
         console.log('restored from bfcache');
-        // window.location.reload();
+        window.location.reload();
     } else {
         console.log('loaded manually');
     }
