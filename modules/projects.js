@@ -104,7 +104,7 @@ new Projects(
 );
 
 /////////////
-// export let compiledHtml;
+
 const projectsRender = () => {
     if (window.location.href.endsWith('projects.html')) {
         // select source html
