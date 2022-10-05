@@ -11,19 +11,26 @@ const bgImg = async () =>
 
 // PG TRANSITIONS
 window.addEventListener('load', async () => {
-    // window.addEventListener('pageshow', () => {
-    // corrects for back/forward on desktop browser, but 1) drops page-transition altogether on firefox 2) page "unload" transition dropped on chrome (& at least 2 non-ios, mobile browsers) but page "load" transition maintained.
-    // also the nav elements don't always adjust color as they should. Could use dom traversing to deselect the icon color when another icon is hovered/focussed
+    try {
+        // window.addEventListener('pageshow', () => {
+        // corrects for back/forward on desktop browser, but 1) drops page-transition altogether on firefox 2) page "unload" transition dropped on chrome (& at least 2 non-ios, mobile browsers) but page "load" transition maintained.
+        // also the nav elements don't always adjust color as they should. Could use dom traversing to deselect the icon color when another icon is hovered/focussed
 
-    // await bgImg();
+        // await bgImg();
 
-    pgTransitionObj.removeOverlay(200);
+        pgTransitionObj.removeOverlay(200);
 
-    const navAnchors = document.querySelectorAll('nav a, .pg-transition');
+        const navAnchors = document.querySelectorAll('nav a, .pg-transition');
 
-    navAnchors.forEach(anchor => {
-        anchor.addEventListener('click', pgTransitionObj.navigatingTransition);
-    });
+        navAnchors.forEach(anchor => {
+            anchor.addEventListener(
+                'click',
+                pgTransitionObj.navigatingTransition
+            );
+        });
+    } catch (err) {
+        console.error(err);
+    }
 });
 // console.log(window);
 // console.log(window.location);
@@ -31,12 +38,18 @@ window.addEventListener('load', async () => {
 // check for persisted
 window.addEventListener('pageshow', event => {
     if (event.persisted) {
-        console.log('restored from bfcache');
+        console.log('1) restored from bfcache');
         window.location.reload();
     } else {
-        console.log('loaded manually');
+        console.log('1) loaded manually');
     }
 });
+
+// window.addEventListener('pagehide', e =>
+//     e.persisted
+//         ? console.log('2) restored from bfcache')
+//         : console.log('2) loaded manually')
+// );
 
 // HANDLEBARS for projects pg
 projects();
