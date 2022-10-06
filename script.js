@@ -30,12 +30,13 @@ window.addEventListener('load', () => {
 
 // check for persisted
 window.addEventListener('pageshow', event => {
-    const transitionEl = document.querySelector('.transition');
+    // const transitionEl = document.querySelector('.transition');
 
     if (event.persisted) {
         console.log('1) restored from bfcache');
-        // window.location.reload(); // cause increased data use? lighter, viable soln w/o framework?
-        transitionEl.classList.remove('is-active');
+        window.location.reload(); // cause increased data use? lighter, viable soln w/o framework?
+
+        // transitionEl.classList.remove('is-active'); // when using "back btn" doesn't allow pg to remain --> goes back to former pg
     } else {
         console.log('1) loaded manually');
     }
