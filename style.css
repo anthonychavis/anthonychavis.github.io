@@ -19,7 +19,8 @@
     --border-radius: 10px;
 
     /* FONT SIZE */
-    --h1-font-size: 2.5rem;
+    /* --h1-font-size: 2.5rem; */
+    --h1-new-size: clamp(40px, 20vw, 100px);
     /* --h2-font-size: 2rem; */
     --h2-new-size: clamp(30px, 15vw, 75px);
     /* --h3-font-size: 1.5rem; */
@@ -143,7 +144,8 @@ main a:visited {
 
 h1 {
     /* font-size: var(--h1-font-size); */
-    font-size: clamp(40px, 20vw, 100px);
+    /* font-size: clamp(40px, 20vw, 100px); */
+    font-size: var(--h1-new-size);
     letter-spacing: 2px;
 }
 
