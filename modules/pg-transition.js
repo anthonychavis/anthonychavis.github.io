@@ -33,4 +33,7 @@ const navigatingTransition = e => {
     }
 };
 
-export const pgTransitionObj = { removeOverlay, navigatingTransition };
+const navAnchorClick = anchor =>
+    anchor.addEventListener('click', navigatingTransition);
+
+export const pgTransitionObj = { removeOverlay, navAnchorClick };

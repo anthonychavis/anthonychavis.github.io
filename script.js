@@ -11,27 +11,18 @@ const bgImg = async () =>
 
 // PG TRANSITIONS
 window.addEventListener('load', () => {
-    // window.addEventListener('pageshow', () => {
-    // corrects for back/forward on desktop browser, but 1) drops page-transition altogether on firefox 2) page "unload" transition dropped on chrome (& at least 2 non-ios, mobile browsers) but page "load" transition maintained.
-    // also the nav elements don't always adjust color as they should. Could use dom traversing to deselect the icon color when another icon is hovered/focussed ()
-
     // await bgImg();
 
     pgTransitionObj.removeOverlay(200);
 
     const navAnchors = document.querySelectorAll('nav a, .pg-transition');
 
-    navAnchors.forEach(anchor => {
-        anchor.addEventListener('click', pgTransitionObj.navigatingTransition);
-    });
+    navAnchors.forEach(pgTransitionObj.navAnchorClick);
 });
-// console.log(window);
-// console.log(window.location);
 
 // check for persisted
 window.addEventListener('pageshow', event => {
     // const transitionEl = document.querySelector('.transition');
-
     if (event.persisted) {
         console.log('1) restored from bfcache');
         window.location.reload(); // cause increased data use? lighter, viable soln w/o framework?
