@@ -144,7 +144,6 @@ main a:visited {
 
 h1 {
     /* font-size: var(--h1-font-size); */
-    /* font-size: clamp(40px, 20vw, 100px); */
     font-size: var(--h1-new-size);
     letter-spacing: 2px;
 }
@@ -235,7 +234,6 @@ footer {
     /* blocks interactivity of page while in transition (works on block or inline-block elements */
     pointer-events: none;
     /* need to know duration b/c in js we need to set a timer delay so we can guess & work w/ the transitions */
-    /* transition: 0.4s ease-out; */
     transition: var(--transition-value);
 }
 /* the state when it's active (appears on screen) */
@@ -253,7 +251,6 @@ footer {
     block-size: 100%;
     inline-size: 100%;
     transform: translateX(100%);
-    /* transition: 0.4s ease-out; */
     transition: var(--transition-value);
 }
 .transition-2.is-active {
@@ -280,7 +277,6 @@ footer {
     transform: translateY(-100%);
     z-index: 11;
     background-color: var(--nav-bg);
-    /* transition: 0.4s ease-out; */
     transition: var(--transition-value);
 }
 .transition-4.is-active {
@@ -294,7 +290,6 @@ footer {
     transform: translateX(-100%);
     z-index: 11;
     background-color: var(--nav-bg);
-    /* transition: 0.4s ease-out; */
     transition: var(--transition-value);
 }
 .transition-5.is-active {
