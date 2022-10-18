@@ -4,7 +4,7 @@ import projects from './modules/projects.js';
 import { pgTransitionObj } from './modules/pg-transition.js';
 
 // PG TRANSITIONS
-window.addEventListener('pageshow', () => {
+window.addEventListener('load', () => {
     pgTransitionObj.removeOverlay(200);
 
     const navAnchors = document.querySelectorAll('nav a, .pg-transition');
@@ -12,7 +12,6 @@ window.addEventListener('pageshow', () => {
     navAnchors.forEach(pgTransitionObj.navAnchorClick);
 });
 
-/*
 // check for persisted
 window.addEventListener('pageshow', event => {
     // const transitionEl = document.querySelector('.transition');
@@ -20,12 +19,11 @@ window.addEventListener('pageshow', event => {
         console.log('1) restored from bfcache');
         window.location.reload(); // cause increased data use? lighter, viable soln w/o framework?
 
-        // transitionEl.classList.remove('is-active'); // when using "back btn" doesn't allow pg to remain --> goes back to former pg  // ♣♦♥♠ <-- try using constructor? ♣♦♥♠
+        // transitionEl.classList.remove('is-active'); // when using "back btn" doesn't allow pg to remain --> goes back to former pg
     } else {
         console.log('1) loaded manually');
     }
 });
-*/
 
 // window.addEventListener('pagehide', e =>
 //     e.persisted
