@@ -8,10 +8,14 @@
 
 :root {
     /* COLORS */
-    --color-font1: #ffa500;
-    --nav-bg: #240524;
-    --nav-a-hover-clr: #c0c0c0;
-    --main-a-hover-clr: #ffa500;
+    /* --color-font1: #ffa500; */
+    --color-font1: hsl(41, 75%, 51%);
+    /* --nav-bg: #240524; */
+    --nav-bg: hsl(279, 91%, 13%);
+    /* --nav-a-hover-clr: #c0c0c0; */
+    --nav-a-hover-clr: #b9ddd5;
+    /* --main-a-hover-clr: #ffa500; */
+    --main-a-hover-clr: hsl(41, 75%, 51%);
     --main-a-visited-clr: #008300;
 
     /* BORDER */
@@ -30,6 +34,8 @@
 
     /* PG TRANSITION */
     --transition-value: 0.5s ease-out;
+    /* --transition-value: 0.5s ease-out 0.2s; */
+    /* --transition-z-index: 0; */
 }
 
 html {
@@ -97,6 +103,12 @@ li {
 
 nav a {
     color: inherit;
+}
+
+svg {
+    /* fill: skyblue; */
+    stroke: gray;
+    /* color-rendering: inherit; */
 }
 
 .cur-pg,
@@ -228,6 +240,7 @@ footer {
     inset-block: 0;
     inset-inline: 0;
     z-index: 11;
+    /* z-index: var(--transition-z-index); */
     background-color: var(--nav-bg);
     /* so it won't be active by default */
     opacity: 0;
@@ -247,6 +260,7 @@ footer {
 .transition-2 {
     position: fixed;
     z-index: 11;
+    /* z-index: var(--transition-z-index); */
     background-color: var(--nav-bg);
     block-size: 100%;
     inline-size: 100%;
@@ -263,6 +277,7 @@ footer {
     inline-size: 100%;
     transform: translateY(100%);
     z-index: 11;
+    /* z-index: var(--transition-z-index); */
     background-color: var(--nav-bg);
     transition: var(--transition-value);
 }
@@ -276,6 +291,7 @@ footer {
     inline-size: 100%;
     transform: translateY(-100%);
     z-index: 11;
+    /* z-index: var(--transition-z-index); */
     background-color: var(--nav-bg);
     transition: var(--transition-value);
 }
@@ -289,6 +305,7 @@ footer {
     inline-size: 100%;
     transform: translateX(-100%);
     z-index: 11;
+    /* z-index: var(--transition-z-index); */
     background-color: var(--nav-bg);
     transition: var(--transition-value);
 }
@@ -296,6 +313,11 @@ footer {
     transform: translateX(0);
 }
 
-/* @media screen and (min-width: 1025px) {
+/* @media (prefers-reduced-motion) {
+    img {
+        transition: none;
+    }
+} */
 
+/* @media screen and (min-width: 1025px) {
 } */
