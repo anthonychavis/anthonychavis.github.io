@@ -5,7 +5,8 @@ import { pgTransitionObj } from './modules/pg-transition.js';
 
 // PG TRANSITIONS
 window.addEventListener('load', () => {
-    pgTransitionObj.removeOverlay(200);
+    pgTransitionObj.addTransitionDelay(250);
+    pgTransitionObj.removeOverlay();
 
     const navAnchors = document.querySelectorAll('nav a, .pg-transition');
 

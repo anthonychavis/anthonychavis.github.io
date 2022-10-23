@@ -1,17 +1,21 @@
 const transitionEl = document.querySelector('.transition');
 
 // promisified setTimeout - to always resolve
-const timer = ms => new Promise(resolve => setTimeout(resolve, ms));
+// const timer = ms => new Promise(resolve => setTimeout(resolve, ms));
 // const timer = function (ms) {
 //     return new Promise(function (resolve) {
 //         setTimeout(resolve, ms);
 //     });
 // };
 
-// will always resolve
-const removeOverlay = async ms => {
-    await timer(ms);
+const addTransitionDelay = msTime =>
+    (transitionEl.style.transitionDelay = `${msTime}ms`);
+
+const removeTransitionDelay = () => (transitionEl.style.transitionDelay = '');
+
+const removeOverlay = () => {
     transitionEl.classList.remove('is-active');
+    transitionEl.addEventListener('transitionend', removeTransitionDelay);
 };
 
 const navigatingTransition = e => {
@@ -20,7 +24,6 @@ const navigatingTransition = e => {
 
     // allow going to new page
     let target = e.target.closest('a').href; // traverse
-    // console.log(target);
 
     if (target.slice(-1) !== '#') {
         // add overlay when leaving pg
@@ -36,4 +39,8 @@ const navigatingTransition = e => {
 const navAnchorClick = anchor =>
     anchor.addEventListener('click', navigatingTransition);
 
-export const pgTransitionObj = { removeOverlay, navAnchorClick };
+export const pgTransitionObj = {
+    removeOverlay,
+    navAnchorClick,
+    addTransitionDelay,
+};
