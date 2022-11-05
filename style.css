@@ -224,6 +224,14 @@ footer {
     justify-content: center;
     align-items: center;
     min-block-size: 100vh;
+
+    /* fix Chrome blur bug */
+    background-image: inherit;
+    background-position: inherit;
+    background-size: inherit;
+    background-attachment: inherit;
+
+    /* fix firefox glitch */
     -webkit-backdrop-filter: blur(0.5px);
     backdrop-filter: blur(0.5px);
 }
