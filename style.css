@@ -58,8 +58,11 @@ body {
     position: relative;
     min-block-size: 100vh;
     text-align: center;
-    background: url('resources/images/milad-fakurian-PGdW_bHDbpI-unsplash-medium.jpg')
-        center/cover fixed;
+    background-color: var(--nav-a-hover-clr);
+    background-image: url('./resources/images/milad-fakurian-PGdW_bHDbpI-unsplash-medium.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     overflow: scroll;
 }
 
@@ -221,6 +224,8 @@ footer {
     justify-content: center;
     align-items: center;
     min-block-size: 100vh;
+    -webkit-backdrop-filter: blur(0.5px);
+    backdrop-filter: blur(0.5px);
 }
 #about-article {
     background: var(--card-bg);
