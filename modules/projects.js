@@ -106,16 +106,16 @@ new Projects(
 /////////////
 
 const projectsRender = () => {
-    if (window.location.href.endsWith('projects.html')) {
-        // select source html
-        const templateSource = document.getElementById('projectHB').innerHTML;
-        // fxn
-        const template = Handlebars.compile(templateSource);
-        // call fxn w/ object
-        const compiledHtml = template(context);
-        // assign
-        document.getElementById('project-list').innerHTML = compiledHtml;
-    }
+    if (!window.location.href.endsWith('projects.html')) return;
+
+    // select source html
+    const templateSource = document.getElementById('projectHB').innerHTML;
+    // fxn
+    const template = Handlebars.compile(templateSource);
+    // call fxn w/ object
+    const compiledHtml = template(context);
+    // assign
+    document.getElementById('project-list').innerHTML = compiledHtml;
 };
 
 export default projectsRender;

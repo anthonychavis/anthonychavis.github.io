@@ -25,15 +25,15 @@ const navigatingTransition = e => {
     // allow going to new page
     let target = e.target.closest('a').href; // traverse
 
-    if (target.slice(-1) !== '#') {
-        // add overlay when leaving pg
-        transitionEl.classList.add('is-active');
-        // target pg reveal
-        transitionEl.addEventListener(
-            'transitionend',
-            () => (window.location.href = target)
-        );
-    }
+    if (target.slice(-1) === '#') return;
+
+    // add overlay when leaving pg
+    transitionEl.classList.add('is-active');
+    // target pg reveal
+    transitionEl.addEventListener(
+        'transitionend',
+        () => (window.location.href = target)
+    );
 };
 
 const navAnchorClick = anchor =>
