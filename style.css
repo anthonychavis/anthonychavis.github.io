@@ -135,6 +135,9 @@ main {
 main a:visited {
     color: var(--main-a-visited-clr);
 }
+main a:hover {
+    color: var(--main-a-hover-clr);
+}
 
 .orb-shadow {
     border-radius: 120px;
