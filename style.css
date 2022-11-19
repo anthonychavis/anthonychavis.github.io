@@ -131,12 +131,15 @@ main {
     padding-block-end: 3rem;
     padding-inline: 1rem;
 }
-
+main a {
+    text-decoration: underline;
+}
 main a:visited {
     color: var(--main-a-visited-clr);
 }
 main a:hover {
     color: var(--main-a-hover-clr);
+    text-decoration: none;
 }
 
 .orb-shadow {
