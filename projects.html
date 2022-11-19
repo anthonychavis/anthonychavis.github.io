@@ -54,16 +54,16 @@
         <script id="projectHB" type="text/x-handlebars-template">
             {{#each projects}}
                 <li class='project'>
-                    <a href='{{this.siteLive}}' target='_blank'>
-                        <figure>
-                            <figcaption>{{this.title}}</figcaption>
+                    <figure>
+                        <figcaption>{{this.title}}</figcaption>
+                        <a href='{{this.siteLive}}' target='_blank'>
                             <img
                                 src='{{this.imgSrc}}'
                                 alt='{{this.imgAlt}}'
                                 title='{{this.title}}'
                             />
-                        </figure>
-                    </a>
+                        </a>
+                    </figure>
                     <ul>
                         <li>
                             <a href='{{this.siteLive}}' target='_blank'>Launch
