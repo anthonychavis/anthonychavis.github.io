@@ -270,7 +270,23 @@ footer {
     padding-inline: 1.2rem;
 }
 #socials a {
+    background: var(--nav-bg);
+    background: linear-gradient(
+        135deg,
+        var(--nav-bg) 35%,
+        var(--main-a-hover-clr) 60%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: 0% 0%;
+    background-size: 120% 200%;
     display: flex;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 300ms ease-in-out 100ms;
+}
+#socials a:hover,
+#socials a:focus {
+    background-position: 95% 105%;
 }
 
 /* PG TRANSITION */
