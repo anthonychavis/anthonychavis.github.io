@@ -1,13 +1,5 @@
 const transitionEl = document.querySelector('.transition');
 
-// promisified setTimeout - to always resolve
-// const timer = ms => new Promise(resolve => setTimeout(resolve, ms));
-// const timer = function (ms) {
-//     return new Promise(function (resolve) {
-//         setTimeout(resolve, ms);
-//     });
-// };
-
 const addTransitionDelay = msTime =>
     (transitionEl.style.transitionDelay = `${msTime}ms`);
 
@@ -16,6 +8,7 @@ const removeTransitionDelay = () => (transitionEl.style.transitionDelay = '');
 const removeOverlay = () => {
     transitionEl.classList.remove('is-active');
     transitionEl.addEventListener('transitionend', removeTransitionDelay);
+    return;
 };
 
 const navigatingTransition = e => {
@@ -34,6 +27,7 @@ const navigatingTransition = e => {
         'transitionend',
         () => (window.location.href = target)
     );
+    return;
 };
 
 const navAnchorClick = anchor =>
